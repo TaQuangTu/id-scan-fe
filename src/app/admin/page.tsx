@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 export default function AdminLogin() {
   const [username, setUsername] = useState("");
@@ -119,9 +120,9 @@ export default function AdminLogin() {
             </button>
 
             <div className="text-center">
-              <a href="/" className="text-sm text-cyan-600 hover:text-cyan-800 font-semibold">
+              <Link href="/" className="text-sm text-cyan-600 hover:text-cyan-800 font-semibold">
                 ← Quay lại trang chủ
-              </a>
+              </Link>
             </div>
           </form>
         </div>
