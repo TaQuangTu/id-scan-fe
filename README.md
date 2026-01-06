@@ -14,6 +14,9 @@ Police-operated visitor registration system for Thổ Chu Island, Kiên Giang. S
 - ✅ Admin dashboard with search, view, delete, CSV export
 - ✅ **Local storage persistence** - all data saves to browser
 - ✅ Demo data generator for presentations
+- ✅ **Tourism services portal** - restaurants, hotels, vehicles, tours
+- ✅ **User reviews and ratings** for services
+- ✅ **Tour booking system** with admin management
 
 ### Tech Stack
 - Next.js 15 + TypeScript + Tailwind CSS
@@ -38,12 +41,25 @@ Visit **http://localhost:3000**
 4. Add temporary residence & notes
 5. Submit → saves to browser
 
+**Tourism Services (User View):**
+1. Go to `/services` or click "Dịch Vụ Du Lịch" button
+2. Browse services by category (restaurants, hotels, vehicles, tours)
+3. View service details, prices, and reviews
+4. Write reviews and rate services (1-5 stars)
+5. Book tours directly with customer info
+
 **Admin Dashboard:**
 1. Go to `/admin` 
 2. Login: `admin` / `admin`
-3. View all check-ins, search, delete, or download CSV
-4. Use "Tải dữ liệu mẫu" to load 5 sample visitors for demo
-5. Use "Xóa toàn bộ" to clear all data
+3. **Visitor Management:**
+   - View all check-ins, search, delete, or download CSV
+   - Use "Tải dữ liệu mẫu" to load 5 sample visitors for demo
+   - Use "Xóa toàn bộ" to clear all data
+4. **Services Management** (click "Quản Lý Dịch Vụ"):
+   - Add/edit/delete tourism services
+   - Manage tour bookings (confirm/cancel)
+   - Load demo services data
+   - View all customer reviews
 
 ## 📂 Key Files
 
@@ -52,11 +68,22 @@ src/
 ├── components/
 │   ├── QRScanner.tsx        # QR scanner + VNeID parser
 │   └── VisitorForm.tsx      # Form with localStorage save
-├── app/admin/
-│   ├── page.tsx             # Admin login
-│   └── dashboard/page.tsx   # Admin dashboard
+├── app/
+│   ├── page.tsx             # Home page (visitor check-in)
+│   ├── services/
+│   │   └── page.tsx         # Tourism services portal (user view)
+│   └── admin/
+│       ├── page.tsx         # Admin login
+│       ├── dashboard/
+│       │   └── page.tsx     # Visitor management dashboard
+│       └── services/
+│           └── page.tsx     # Services & bookings management
+├── types/
+│   ├── vneid.ts             # Visitor data types
+│   └── services.ts          # Service, review, booking types
 └── utils/
-    └── demoData.ts          # Demo data generator
+    ├── demoData.ts          # Demo visitor data generator
+    └── servicesStorage.ts   # Services localStorage utilities
 ```
 
 ## 🔄 Next Steps
