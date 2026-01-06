@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import { Html5QrcodeScanner } from "html5-qrcode";
+import Link from "next/link";
 import VisitorForm from "./VisitorForm";
 import type { VNeIDData } from "@/types/vneid";
 
@@ -123,12 +124,20 @@ export default function QRScanner() {
                 <p className="text-sm text-gray-600 font-medium">🏝️ Công an Kiên Giang - Du lịch an toàn</p>
               </div>
             </div>
-            <div className="hidden md:flex items-center gap-2">
-              <div className="w-12 h-12 rounded-lg overflow-hidden shadow-md">
-                <img src="/image3.jpeg" alt="" className="w-full h-full object-cover" />
-              </div>
-              <div className="w-12 h-12 rounded-lg overflow-hidden shadow-md">
-                <img src="/image4.jpeg" alt="" className="w-full h-full object-cover" />
+            <div className="flex items-center gap-3">
+              <Link
+                href="/services"
+                className="hidden md:block bg-gradient-to-r from-cyan-600 to-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:from-cyan-700 hover:to-blue-700 transition-all shadow-lg"
+              >
+                🏝️ Dịch Vụ Du Lịch
+              </Link>
+              <div className="hidden md:flex items-center gap-2">
+                <div className="w-12 h-12 rounded-lg overflow-hidden shadow-md">
+                  <img src="/image3.jpeg" alt="" className="w-full h-full object-cover" />
+                </div>
+                <div className="w-12 h-12 rounded-lg overflow-hidden shadow-md">
+                  <img src="/image4.jpeg" alt="" className="w-full h-full object-cover" />
+                </div>
               </div>
             </div>
           </div>
