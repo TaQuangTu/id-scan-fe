@@ -189,7 +189,7 @@ export default function QRScanner() {
                           </li>
                           <li className="flex items-start">
                             <span className="font-bold text-cyan-600 mr-2 min-w-[20px]">2.</span>
-                            <span>Chọn mục <strong>&ldquo;Mã QR định danh&rdquo;</strong></span>
+                            <span>Chọn mục <strong>&ldquo;Mã QR Căn Cước Công Dân&rdquo;</strong></span>
                           </li>
                           <li className="flex items-start">
                             <span className="font-bold text-cyan-600 mr-2 min-w-[20px]">3.</span>
