@@ -524,7 +524,7 @@ export default function AdminServicesManagement() {
                           <div className="text-5xl mb-3">🏝️</div>
                           <p className="text-gray-500 text-lg">Chưa có dịch vụ nào</p>
                           <p className="text-gray-400 text-sm mt-1">
-                            Nhấn &ldquo;Thêm Dịch Vụ Mới&rdquo; để bắt đầu
+                            Nhấn &quot;Thêm Dịch Vụ Mới&quot; để bắt đầu
                           </p>
                         </td>
                       </tr>
