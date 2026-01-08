@@ -148,24 +148,24 @@ export default function ServicesPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-green-50">
-      {/* Header with Background */}
+      {/* Page Title Section */}
       <div className="relative bg-gradient-to-r from-cyan-600 to-blue-600 text-white">
         <div className="absolute inset-0 opacity-20">
           <img src="/image1.jpeg" alt="" className="w-full h-full object-cover" />
         </div>
-        <div className="relative container mx-auto px-4 py-8 max-w-7xl">
+        <div className="relative container mx-auto px-4 py-6 md:py-8 max-w-7xl">
           <div className="flex items-center justify-between">
             <div>
-              <h1 className="text-3xl md:text-4xl font-bold mb-2">
+              <h1 className="text-2xl md:text-3xl font-bold mb-2">
                 🏝️ Dịch Vụ Du Lịch Thổ Chu
               </h1>
-              <p className="text-cyan-100 text-lg">
+              <p className="text-cyan-100 text-sm md:text-base">
                 Khám phá các dịch vụ tuyệt vời trên đảo
               </p>
             </div>
             <Link
               href="/"
-              className="bg-white text-cyan-600 px-6 py-3 rounded-lg font-semibold hover:bg-cyan-50 transition-colors shadow-lg"
+              className="bg-white text-cyan-600 px-4 md:px-6 py-2 md:py-3 rounded-lg text-sm md:text-base font-semibold hover:bg-cyan-50 transition-colors shadow-lg"
             >
               ← Trang chủ
             </Link>

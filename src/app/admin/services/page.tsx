@@ -211,19 +211,19 @@ export default function AdminServicesManagement() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-green-50">
-      {/* Header */}
-      <div className="bg-gradient-to-r from-cyan-600 to-blue-600 text-white shadow-lg">
-        <div className="container mx-auto px-4 py-6 max-w-7xl">
+      {/* Page Header - Simplified since global header exists */}
+      <div className="bg-gradient-to-r from-cyan-600 to-blue-600 text-white shadow-md">
+        <div className="container mx-auto px-4 py-4 md:py-6 max-w-7xl">
           <div className="flex items-center justify-between">
             <div>
-              <h1 className="text-3xl font-bold mb-1">🏝️ Quản Lý Dịch Vụ Du Lịch</h1>
-              <p className="text-cyan-100">Admin Dashboard - Thổ Chu Island</p>
+              <h1 className="text-xl md:text-2xl font-bold mb-1">🏝️ Quản Lý Dịch Vụ Du Lịch</h1>
+              <p className="text-cyan-100 text-sm">Admin Dashboard - Thổ Chu Island</p>
             </div>
             <Link
               href="/admin/dashboard"
-              className="bg-white text-cyan-600 px-6 py-3 rounded-lg font-semibold hover:bg-cyan-50 transition-colors shadow-lg"
+              className="bg-white text-cyan-600 px-3 md:px-6 py-2 md:py-3 rounded-lg text-sm md:text-base font-semibold hover:bg-cyan-50 transition-colors shadow-lg"
             >
-              ← Quay lại Dashboard
+              ← <span className="hidden sm:inline">Quay lại</span> Dashboard
             </Link>
           </div>
         </div>

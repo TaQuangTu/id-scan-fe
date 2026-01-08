@@ -2,7 +2,6 @@
 
 import { useState, useRef, useEffect } from "react";
 import { Html5QrcodeScanner } from "html5-qrcode";
-import Link from "next/link";
 import VisitorForm from "./VisitorForm";
 import type { VNeIDData } from "@/types/vneid";
 
@@ -100,49 +99,6 @@ export default function QRScanner() {
         {/* High contrast overlay for professional look */}
         <div className="absolute inset-0 bg-gradient-to-b from-slate-900/90 via-slate-800/85 to-blue-900/90"></div>
       </div>
-
-      {/* Professional Header */}
-      <header className="bg-white shadow-lg border-b-4 border-cyan-500">
-        <div className="container mx-auto px-4 py-4 max-w-6xl">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-4">
-              {/* Logo with Image */}
-              <div className="relative">
-                <div className="w-16 h-16 rounded-full shadow-xl border-4 border-cyan-500 overflow-hidden bg-white">
-                  <img 
-                    src="/image2.jpeg" 
-                    alt="Logo Thổ Chu" 
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-green-500 rounded-full border-2 border-white"></div>
-              </div>
-              <div>
-                <h1 className="text-xl md:text-2xl font-bold text-gray-900">
-                  Hệ Thống Check-in Đảo Thổ Chu
-                </h1>
-                <p className="text-sm text-gray-600 font-medium">🏝️ Công an Kiên Giang - Du lịch an toàn</p>
-              </div>
-            </div>
-            <div className="flex items-center gap-3">
-              <Link
-                href="/services"
-                className="hidden md:block bg-gradient-to-r from-cyan-600 to-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:from-cyan-700 hover:to-blue-700 transition-all shadow-lg"
-              >
-                🏝️ Dịch Vụ Du Lịch
-              </Link>
-              <div className="hidden md:flex items-center gap-2">
-                <div className="w-12 h-12 rounded-lg overflow-hidden shadow-md">
-                  <img src="/image3.jpeg" alt="" className="w-full h-full object-cover" />
-                </div>
-                <div className="w-12 h-12 rounded-lg overflow-hidden shadow-md">
-                  <img src="/image4.jpeg" alt="" className="w-full h-full object-cover" />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </header>
 
       <div className="container mx-auto px-4 py-6 max-w-6xl flex-1">
         {/* Main Content Area */}
@@ -257,7 +213,7 @@ export default function QRScanner() {
         <div className="container mx-auto px-4 py-4 max-w-6xl">
           <div className="flex flex-col md:flex-row items-center justify-between gap-3">
             <div className="text-center md:text-left">
-              <p className="font-bold text-sm">🏛️ Công an Đảo Thổ Chu - Kiên Giang</p>
+              <p className="font-bold text-sm">🏛️ Công an Đảo Thổ Chu - An Giang</p>
               <p className="text-xs text-gray-400">Hệ thống quản lý du khách tự động - An toàn & Hiện đại</p>
             </div>
             <div className="flex items-center gap-4">

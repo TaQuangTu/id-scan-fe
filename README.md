@@ -1,6 +1,6 @@
 # VNeID QR Scanner - Thổ Chu Island Check-in
 
-Police-operated visitor registration system for Thổ Chu Island, Kiên Giang. Scans VNeID QR codes and manages visitor check-ins.
+Police-operated visitor registration system for Thổ Chu Island, An Giang. Scans VNeID QR codes and manages visitor check-ins.
 
 ## 🎯 Current Status
 

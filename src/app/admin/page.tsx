@@ -53,7 +53,7 @@ export default function AdminLogin() {
               Đăng Nhập Quản Trị
             </h1>
             <p className="text-cyan-100 text-sm">
-              Công an Đảo Thổ Chu - Kiên Giang
+              Công an Đảo Thổ Chu - An Giang
             </p>
           </div>
 

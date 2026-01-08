@@ -88,7 +88,7 @@ export default function VisitorForm({ initialData, onReset }: VisitorFormProps) 
           </p>
           <p className="text-xl font-bold text-cyan-700">{formData["Họ và tên"]}</p>
           <p className="text-gray-600 text-sm mt-2">
-            🏝️ Đến với Đảo Thổ Chu - Kiên Giang
+            🏝️ Đến với Đảo Thổ Chu - An Giang
           </p>
         </div>
         <p className="text-gray-600 mt-4 text-sm">
