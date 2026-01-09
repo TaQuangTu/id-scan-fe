@@ -174,47 +174,50 @@ export default function ServicesPage() {
       </div>
 
       <div className="container mx-auto px-4 py-8 max-w-7xl">
-        {/* Category Filter */}
-        <div className="bg-white rounded-xl shadow-lg p-4 mb-8">
-          <div className="flex flex-wrap gap-3">
-            <button
-              onClick={() => {
-                setSelectedCategory("all");
-                setSelectedService(null);
-              }}
-              className={`px-6 py-3 rounded-lg font-semibold transition-all ${
-                selectedCategory === "all"
-                  ? "bg-cyan-600 text-white shadow-lg scale-105"
-                  : "bg-gray-100 text-gray-700 hover:bg-gray-200"
-              }`}
-            >
-              🌟 Tất cả ({services.length})
-            </button>
-            {(["restaurant", "hotel", "vehicle", "tour"] as ServiceCategory[]).map((cat) => {
-              const count = services.filter((s) => s.category === cat).length;
-              return (
+        <div className="flex gap-6">
+          {/* Main Content Area */}
+          <div className="flex-1">
+            {/* Category Filter */}
+            <div className="bg-white rounded-xl shadow-lg p-4 mb-8">
+              <div className="flex flex-wrap gap-3">
                 <button
-                  key={cat}
                   onClick={() => {
-                    setSelectedCategory(cat);
+                    setSelectedCategory("all");
                     setSelectedService(null);
                   }}
                   className={`px-6 py-3 rounded-lg font-semibold transition-all ${
-                    selectedCategory === cat
+                    selectedCategory === "all"
                       ? "bg-cyan-600 text-white shadow-lg scale-105"
                       : "bg-gray-100 text-gray-700 hover:bg-gray-200"
                   }`}
                 >
-                  {getCategoryIcon(cat)} {getCategoryLabel(cat)} ({count})
+                  🌟 Tất cả ({services.length})
                 </button>
-              );
-            })}
-          </div>
-        </div>
+                {(["restaurant", "hotel", "vehicle", "tour"] as ServiceCategory[]).map((cat) => {
+                  const count = services.filter((s) => s.category === cat).length;
+                  return (
+                    <button
+                      key={cat}
+                      onClick={() => {
+                        setSelectedCategory(cat);
+                        setSelectedService(null);
+                      }}
+                      className={`px-6 py-3 rounded-lg font-semibold transition-all ${
+                        selectedCategory === cat
+                          ? "bg-cyan-600 text-white shadow-lg scale-105"
+                          : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                      }`}
+                    >
+                      {getCategoryIcon(cat)} {getCategoryLabel(cat)} ({count})
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
 
-        {/* Services Grid */}
-        {!selectedService ? (
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* Services Grid */}
+            {!selectedService ? (
+              <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-6">
             {filteredServices.map((service) => {
               const avgRating = getAverageRating(service.id);
               const reviewCount = getServiceReviews(service.id).length;
@@ -649,6 +652,96 @@ export default function ServicesPage() {
             </div>
           </div>
         )}
+          </div>
+
+          {/* Right Sidebar - Advertisers & Local Policies */}
+          <div className="hidden lg:block w-80 space-y-6">
+            {/* Local Policies Card */}
+            <div className="bg-white rounded-xl shadow-lg p-6">
+              <div className="flex items-center gap-2 mb-4 pb-3 border-b-2 border-cyan-500">
+                <span className="text-2xl">📋</span>
+                <h3 className="text-lg font-bold text-gray-900">Quy Định Địa Phương</h3>
+              </div>
+              <div className="space-y-4 text-sm text-gray-700">
+                <div className="flex gap-3">
+                  <span className="text-cyan-600 font-bold">•</span>
+                  <p>Giữ gìn vệ sinh môi trường biển và bãi biển</p>
+                </div>
+                <div className="flex gap-3">
+                  <span className="text-cyan-600 font-bold">•</span>
+                  <p>Không khai thác hải sản trái phép trong khu vực bảo tồn</p>
+                </div>
+                <div className="flex gap-3">
+                  <span className="text-cyan-600 font-bold">•</span>
+                  <p>Tuân thủ giờ giới nghiêm từ 22:00 - 05:00</p>
+                </div>
+                <div className="flex gap-3">
+                  <span className="text-cyan-600 font-bold">•</span>
+                  <p>Luôn mang theo giấy tờ tùy thân khi di chuyển</p>
+                </div>
+                <div className="flex gap-3">
+                  <span className="text-cyan-600 font-bold">•</span>
+                  <p>Báo cáo ngay cho cơ quan chức năng khi phát hiện hành vi khả nghi</p>
+                </div>
+              </div>
+              
+              <div className="mt-6 pt-4 border-t border-gray-200">
+                <div className="bg-gradient-to-r from-cyan-50 to-blue-50 rounded-lg p-4">
+                  <p className="text-xs text-gray-600 font-semibold mb-2">📞 Liên Hệ Khẩn Cấp</p>
+                  <div className="space-y-1 text-sm">
+                    <p className="font-bold text-cyan-700">Công An: 0297 3845 166</p>
+                    <p className="font-bold text-cyan-700">Cấp Cứu: 0297 3845 117</p>
+                    <p className="font-bold text-cyan-700">Trạm Y Tế: 0297 3845 117</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Advertisement Space */}
+            <div className="bg-gradient-to-br from-cyan-500 to-blue-600 rounded-xl shadow-lg p-6 text-white text-center">
+              <div className="text-4xl mb-3">🏝️</div>
+              <h4 className="font-bold text-lg mb-2">Không Gian Quảng Cáo</h4>
+              <p className="text-sm text-cyan-100 mb-4">
+                Liên hệ để quảng bá dịch vụ của bạn
+              </p>
+              <div className="bg-white/20 backdrop-blur-sm rounded-lg p-4 text-xs">
+                <p className="font-semibold">📧 Email: ads@thochu.vn</p>
+                <p className="font-semibold mt-1">📱 Hotline: 02973845166</p>
+              </div>
+            </div>
+
+            {/* Quick Stats */}
+            <div className="bg-white rounded-xl shadow-lg p-6">
+              <h4 className="font-bold text-gray-900 mb-4 flex items-center gap-2">
+                <span>📊</span> Thống Kê Du Lịch
+              </h4>
+              <div className="space-y-3">
+                <div className="flex justify-between items-center pb-2 border-b border-gray-200">
+                  <span className="text-sm text-gray-600">Dịch vụ đăng ký</span>
+                  <span className="font-bold text-cyan-600">{services.length}</span>
+                </div>
+                <div className="flex justify-between items-center pb-2 border-b border-gray-200">
+                  <span className="text-sm text-gray-600">Nhà hàng</span>
+                  <span className="font-bold text-cyan-600">
+                    {services.filter(s => s.category === 'restaurant').length}
+                  </span>
+                </div>
+                <div className="flex justify-between items-center pb-2 border-b border-gray-200">
+                  <span className="text-sm text-gray-600">Khách sạn</span>
+                  <span className="font-bold text-cyan-600">
+                    {services.filter(s => s.category === 'hotel').length}
+                  </span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-sm text-gray-600">Tour du lịch</span>
+                  <span className="font-bold text-cyan-600">
+                    {services.filter(s => s.category === 'tour').length}
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
